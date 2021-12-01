@@ -1,8 +1,3 @@
-# Meteor Addon Template
+# RPC addon
 
-A template to allow easy usage of the Meteor Addon API.
-
-### How to use:  
-- Clone this project
-- Use this template to create new modules/commands
-- Run the mod with Meteor.
+Yet another meteor addon, this time not an Orion or rejects paste, but one with a highly extensible RichPresence module

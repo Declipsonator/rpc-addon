@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "epc-addon",
-  "version": "${version}",
+  "version": "1.0",
   "name": "RPC Addon",
   "description": "An addon",
   "authors": [
@@ -25,7 +25,7 @@
   },
   "depends": {
     "java": ">=16",
-    "minecraft": ">=@mc_version@",
+    "minecraft": ">=1.17.1",
     "meteor-client": "*"
   }
 }
