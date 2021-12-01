@@ -19,8 +19,6 @@ import meteordevelopment.meteorclient.gui.WidgetScreen;
 import meteordevelopment.meteorclient.gui.widgets.WWidget;
 import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.systems.modules.Categories;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.meteorclient.utils.Utils;
 import meteordevelopment.meteorclient.utils.misc.MeteorStarscript;
@@ -56,6 +54,15 @@ public class RPC extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
     private final SettingGroup sgLine1 = settings.createGroup("Line 1");
     private final SettingGroup sgLine2 = settings.createGroup("Line 2");
+
+    // General
+
+    private final Setting<ClientMode> rpcMode = sgGeneral.add(new EnumSetting.Builder<ClientMode>()
+        .name("rpc-mode")
+        .description("What do display in RPC")
+        .defaultValue(ClientMode.BababaPlus)
+        .build()
+    );
 
     // Line 1
 
@@ -109,12 +116,6 @@ public class RPC extends Module {
         .build()
     );
 
-    private final Setting<ClientMode> rpcMode = sgGeneral.add(new EnumSetting.Builder<ClientMode>()
-        .name("rpc-mode")
-        .description("What do display in RPC")
-        .defaultValue(ClientMode.BababaPlus)
-        .build()
-    );
 
     private static final DiscordRichPresence rpc = new DiscordRichPresence();
     private static final DiscordRPC instance = DiscordRPC.INSTANCE;
