@@ -1,11 +1,13 @@
 package me.septemba.rpc_addon;
 
+import me.septemba.rpc_addon.modules.LogoHUD;
 import me.septemba.rpc_addon.modules.RPC;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 
+import meteordevelopment.meteorclient.systems.modules.render.hud.HUD;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.lang.invoke.MethodHandles;
@@ -23,7 +25,13 @@ public class MainClass extends MeteorAddon {
 
 		// Modules
 		Modules.get().add(new RPC());
-	}
+
+        // HUD
+
+        HUD hud = Modules.get().get(HUD.class);
+        hud.elements.add(new LogoHUD(hud));
+
+    }
 
 	@Override
 	public void onRegisterCategories() {
