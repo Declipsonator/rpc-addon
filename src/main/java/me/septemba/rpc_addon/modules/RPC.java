@@ -159,7 +159,7 @@ public class RPC extends Module {
     private String PornHub_LIT = "PornHub v69.420";
 
     public RPC() {
-        super(MainClass.CATEGORY, "RPC", "Le Funi");
+        super(MainClass.CATEGORY, "Discord-RPC", "Le Funi");
         runInMainMenu = true;
     }
 
