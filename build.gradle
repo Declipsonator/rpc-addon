@@ -31,6 +31,13 @@ dependencies {
 
     // Meteor
     modImplementation "meteordevelopment:meteor-client:${project.meteor_version}"
+
+    def library = { id ->
+        implementation id
+    }
+    library "club.minnced:java-discord-rpc:${project.discordrpc_version}"
+
+
 }
 
 processResources {
