@@ -4,12 +4,13 @@ import me.septemba.rpc_addon.modules.LogoHUD;
 import me.septemba.rpc_addon.modules.RPC;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
+import meteordevelopment.meteorclient.systems.Systems;
+import meteordevelopment.meteorclient.systems.hud.HUD;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
-
-import meteordevelopment.meteorclient.systems.modules.render.hud.HUD;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.lang.invoke.MethodHandles;
 
 public class MainClass extends MeteorAddon {
@@ -28,7 +29,7 @@ public class MainClass extends MeteorAddon {
 
         // HUD
 
-        HUD hud = Modules.get().get(HUD.class);
+        HUD hud = Systems.get(HUD.class);
         hud.elements.add(new LogoHUD(hud));
 
     }
